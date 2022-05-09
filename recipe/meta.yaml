@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,12 +29,12 @@ test:
     - jupyter_ydoc
 
 about:
-  home: https://github.com/davidbrochart/jupyter_ydoc
+  home: https://github.com/jupyter-server/jupyter_ydoc
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
   summary: Document structures for collaborative editing using Ypy
-  dev_url: https://github.com/davidbrochart/jupyter_ydoc
+  dev_url: https://github.com/jupyter-server/jupyter_ydoc
 
 extra:
   recipe-maintainers:

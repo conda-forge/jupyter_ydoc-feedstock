@@ -1,7 +1,7 @@
 About jupyter_ydoc
 ==================
 
-Home: https://github.com/davidbrochart/jupyter_ydoc
+Home: https://github.com/jupyter-server/jupyter_ydoc
 
 Package license: BSD-3-Clause
 
@@ -9,7 +9,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter_ydoc-fe
 
 Summary: Document structures for collaborative editing using Ypy
 
-Development: https://github.com/davidbrochart/jupyter_ydoc
+Development: https://github.com/jupyter-server/jupyter_ydoc
 
 Current build status
 ====================

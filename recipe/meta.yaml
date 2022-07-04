@@ -1,5 +1,5 @@
 {% set name = "jupyter_ydoc" %}
-{% set version = "0.1.12" %}
+{% set version = "0.1.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 91ce990611d6a7e29985c6c749736dda219ef9306ee8bb5ecb21e85d40f7e085
+  sha256: f066d92e82a4b5fa8e55d5e6f55fe5fc1ed98dd55b42feba3475253f864657c8
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.7
     - setuptools
-    - y-py >=0.5.0,<0.6.0
+    - y-py >=0.5.2,<0.6.0
     - ypy-websocket >=0.1.2
 
 test:

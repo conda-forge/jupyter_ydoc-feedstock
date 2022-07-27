@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -21,8 +21,7 @@ requirements:
   run:
     - python >=3.7
     - setuptools
-    - y-py >=0.5.2,<0.6.0
-    - ypy-websocket >=0.1.8
+    - y-py >=0.5.3,<0.6.0
 
 test:
   imports:

@@ -21,7 +21,7 @@ requirements:
     - python >=3.7
   run:
     - python >=3.7
-    - setuptools
+    - importlib_metadata >=3.6
     - y-py >=0.5.3,<0.6.0
 
 test:

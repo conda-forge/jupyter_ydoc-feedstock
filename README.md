@@ -148,3 +148,4 @@ Feedstock Maintainers
 * [@conda-forge/jupyter_server](https://github.com/conda-forge/jupyter_server/)
 * [@davidbrochart](https://github.com/davidbrochart/)
 
+<!-- comment added to trigger CI after #29 -->

@@ -48,8 +48,9 @@ test:
     - pip check
     - export YARN_CACHE_FOLDER="$SRC_DIR/.yarn-cache"  # [unix]
     - set YARN_CACHE_FOLDER="%SRC_DIR%/.yarn-cache"  # [win]
-    - cd src && yarn --frozen-lockfile --ignore-scripts && cd javascript && yarn build && cd ../..
-    - cd src && pytest -vv --asyncio-mode=auto --cov=jupyter_ydoc --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=70
+    - cd src/javascript && yarn --frozen-lockfile && cd ../tests && yarn --frozen-lockfile
+    - cd "$SRC_DIR" || cd "%SRC_DIR"
+    - pytest -vv --asyncio-mode=auto --cov=jupyter_ydoc --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=70
     # - mypy -p jupyter_ydoc
 
 about:

@@ -41,7 +41,6 @@ test:
     - websockets >=10.0
     - yarn <2
     - ypy-websocket >=0.3.1,<0.4.0
-    # - mypy
   imports:
     - jupyter_ydoc
   commands:
@@ -55,7 +54,6 @@ test:
     - cd "$SRC_DIR"  # [unix]
     - cd "%SRC_DIR%"  # [win]
     - pytest -vv --asyncio-mode=auto --cov=jupyter_ydoc --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=56
-    # - mypy -p jupyter_ydoc
 
 about:
   home: https://github.com/jupyter-server/jupyter_ydoc

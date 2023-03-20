@@ -1,42 +1,67 @@
-{% set name = "jupyter_ydoc" %}
-{% set version = "0.3.3" %}
+{% set version = "0.3.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: jupyter_ydoc
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9ba0975f2016e0c94e3200aeb713032ae255ad8ad035905bd0574cae42240b73
+  - folder: dist
+    url: https://pypi.io/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
+    sha256: 5a2262e70bf004b82cc6ce71675e9330aa058fe30db2e87cd8125ad4dd1ae4e1
+  - folder: src
+    url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: 0f0c6064f67e07112f7982dc5ea68b2a44c2f7b39003ade3f64c7a99ba7e7f99
 
 build:
   noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv
+  script: cd dist && {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - pip
-    - hatchling
     - hatch-nodejs-version
+    - hatchling >=1.10.0
+    - pip
     - python >=3.7
   run:
-    - python >=3.7
     - importlib_metadata >=3.6
+    - python >=3.7
     - y-py >=0.6.0,<0.7.0
 
 test:
+  source_files:
+    - src/javascript
+    - src/lerna.json
+    - src/package.json
+    - src/tests
+  requires:
+    - nodejs >=18,<19
+    - pip
+    - pytest-asyncio
+    - pytest-cov
+    - websockets >=10.0
+    - yarn <2
+    - ypy-websocket >=0.8.3,<0.9.0
+    # - mypy
   imports:
     - jupyter_ydoc
+  commands:
+    - pip check
+    - export YARN_CACHE_FOLDER="$SRC_DIR/.yarn-cache"  # [unix]
+    - set YARN_CACHE_FOLDER="%SRC_DIR%/.yarn-cache"  # [win]
+    - cd src && yarn --frozen-lockfile --ignore-scripts && yarn lerna bootstrap && yarn build && cd ..
+    - cd src && pytest -vv --asyncio-mode=auto --cov=jupyter_ydoc --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=70
+    # - mypy -p jupyter_ydoc
 
 about:
   home: https://github.com/jupyter-server/jupyter_ydoc
   license: BSD-3-Clause
   license_family: BSD
-  license_file: LICENSE
+  license_file: dist/LICENSE
   summary: Document structures for collaborative editing using Ypy
-  dev_url: https://github.com/jupyter-server/jupyter_ydoc
+  doc_url: https://jupyter-ydoc.readthedocs.io
 
 extra:
   recipe-maintainers:
     - davidbrochart
+    - conda-forge/jupyter_server

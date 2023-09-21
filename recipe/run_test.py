@@ -26,7 +26,6 @@ os.environ.update(
 
 for cmd in [
     ["yarn"],
-    ["yarn", "lerna", "bootstrap"],
     ["yarn", "build"],
 ]:
     rc = subprocess.call(cmd, cwd=str(SRC))

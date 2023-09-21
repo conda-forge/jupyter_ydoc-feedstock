@@ -30,6 +30,7 @@ requirements:
 
 test:
   source_files:
+    - src/.yarnrc.yml
     - src/javascript
     - src/lerna.json
     - src/package.json

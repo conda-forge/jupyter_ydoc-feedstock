@@ -19,7 +19,10 @@ PYTEST_ARGS = [
     f"--cov-fail-under={COV_FAIL_UNDER}",
 ]
 
-os.environ["YARN_CACHE_FOLDER"] = str(CACHE_DIR)
+os.environ.update(
+    YARN_CACHE_FOLDER=str(CACHE_DIR),
+    YARN_ENABLE_IMMUTABLE_INSTALLS="false",
+)
 
 for cmd in [
     ["yarn"],

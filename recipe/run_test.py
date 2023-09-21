@@ -18,11 +18,14 @@ PYTEST_ARGS = [
     "--no-cov-on-fail",
     f"--cov-fail-under={COV_FAIL_UNDER}",
 ]
+YARNRC = SRC / ".yarnrc"
 
-os.environ.update(
-    YARN_CACHE_FOLDER=str(CACHE_DIR),
-    YARN_ENABLE_IMMUTABLE_INSTALLS="false",
-)
+YARNRC.write_text(f"""
+enableImmutableInstalls: false
+nodeLinker: node-modules
+enableTelemetry: false
+cacheFolder: {CACHE_DIR}
+""", encoding="utf-8")
 
 for cmd in [
     ["yarn"],

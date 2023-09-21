@@ -34,7 +34,6 @@ test:
     - src/lerna.json
     - src/package.json
     - src/tests
-    - src/yarn.lock
   requires:
     - nodejs >=20,<21
     - pip

@@ -1,4 +1,4 @@
-{% set version = "1.1.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: jupyter_ydoc
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
-    sha256: 00f8b33a6e7d55cbe12b91b87a6a86b673e2933d77c3a1261bba8b24753645dd
+    sha256: 9bb3f4d327d47597d9430358df3d59795899521ca0eb50c799c0236ef4dc177d
   - folder: src
     url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: ce5e34217b6702a53c16ecce766798d41472258a02ba01a6e2ed89e66d2b4b37
+    sha256: 17e1e62f0dc6cfbe86f80b6e802af537aee229f86d20df1fcbdbffc466ed4d43
 
 build:
   noarch: python

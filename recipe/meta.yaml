@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 package:
   name: jupyter_ydoc
@@ -7,10 +7,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.io/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
-    sha256: 9bb3f4d327d47597d9430358df3d59795899521ca0eb50c799c0236ef4dc177d
+    sha256: 716dda8cb8af881fec2fbc88aea3fb0d3bb24bbeb80a99a8aff2e01d089d5b0d
   - folder: src
     url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 17e1e62f0dc6cfbe86f80b6e802af537aee229f86d20df1fcbdbffc466ed4d43
+    sha256: ac00f86169bad49ebb985abf612d34bd85ec7e26182427c40e4f766f289ef9a7
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
   run:
     - importlib_metadata >=3.6
     - python >=3.7
-    - pycrdt >=0.7.0,<0.8.0
+    - pycrdt >=0.8.2,<0.9.0
 
 test:
   source_files:
@@ -41,7 +41,7 @@ test:
     - pytest-cov
     - websockets >=10.0
     - yarn <2
-    - pycrdt-websocket >=0.12.5,<0.13.0
+    - pycrdt-websocket >=0.12.6,<0.13.0
     # - mypy
   imports:
     - jupyter_ydoc

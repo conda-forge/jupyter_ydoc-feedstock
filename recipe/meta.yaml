@@ -41,7 +41,7 @@ test:
     - pytest-cov
     - websockets >=10.0
     - yarn <2
-    - pycrdt-websocket >=0.12.6,<0.13.0
+    - pycrdt-websocket >=0.14.1,<0.15.0
     # - mypy
   imports:
     - jupyter_ydoc

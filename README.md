@@ -145,6 +145,6 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/jupyter_server](https://github.com/conda-forge/jupyter_server/)
+* [@conda-forge/jupyter_server](https://github.com/orgs/conda-forge/teams/jupyter_server/)
 * [@davidbrochart](https://github.com/davidbrochart/)
 

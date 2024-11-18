@@ -1,4 +1,5 @@
 {% set version = "3.0.1" %}
+{% set python_min = python_min | default("3.9") %}
 
 package:
   name: jupyter_ydoc
@@ -6,7 +7,7 @@ package:
 
 source:
   - folder: dist
-    url: https://pypi.io/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
+    url: https://pypi.org/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
     sha256: cedae9f3ee0a77288317f21bb81848ed61674d1ba468b0c396c160a264a2106b
   - folder: src
     url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v{{ version }}.tar.gz
@@ -22,10 +23,10 @@ requirements:
     - hatch-nodejs-version
     - hatchling >=1.10.0
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - importlib_metadata >=3.6
-    - python >=3.7
+    - python >={{ python_min }}
     - pycrdt >=0.10.1,<0.11.0
 
 test:
@@ -34,24 +35,30 @@ test:
     - src/lerna.json
     - src/package.json
     - src/tests
+    - src/yarn.lock
   requires:
-    - nodejs >=18,<19
+    - httpx-ws >=0.5.2
+    - hypercorn >=0.16.0
+    - nodejs >=22,<23
     - pip
+    - pycrdt-websocket >=0.15.0,<0.16.0
     - pytest-asyncio
     - pytest-cov
+    - python {{ python_min }}
     - websockets >=10.0
-    - yarn <2
-    - pycrdt-websocket >=0.15.0,<0.16.0
-    # - mypy
+    - yarn <4
   imports:
     - jupyter_ydoc
   commands:
     - pip check
-    - export YARN_CACHE_FOLDER="$SRC_DIR/.yarn-cache"  # [unix]
-    - set YARN_CACHE_FOLDER="%SRC_DIR%/.yarn-cache"  # [win]
-    - cd src && yarn --frozen-lockfile --ignore-scripts && yarn lerna bootstrap && yarn build && cd ..
-    - cd src && pytest -vv --asyncio-mode=auto --cov=jupyter_ydoc --cov-report=term-missing:skip-covered --no-cov-on-fail --cov-fail-under=70
-    # - mypy -p jupyter_ydoc
+    - export YARN_CACHE_FOLDER="$SRC_DIR/.yarn-cache" || set "YARN_CACHE_FOLDER=%SRC_DIR%/.yarn-cache"
+    - cd src
+    - |-
+      echo "nodeLinker: node-modules" > .yarnrc.yml
+    - yarn
+    - yarn build
+    - coverage run --source=jupyter_ydoc --branch -m pytest -vv --asyncio-mode=auto --color=yes --tb=long
+    - coverage report --show-missing --skip-covered --fail-under=81
 
 about:
   home: https://github.com/jupyter-server/jupyter_ydoc

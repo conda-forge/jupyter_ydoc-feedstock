@@ -54,7 +54,8 @@ test:
     - export YARN_CACHE_FOLDER="$SRC_DIR/.yarn-cache" || set "YARN_CACHE_FOLDER=%SRC_DIR%/.yarn-cache"
     - cd src
     - |-
-      echo "nodeLinker: node-modules" > .yarnrc.yml
+      echo "nodeLinker: node-modules"          >> .yarnrc.yml
+      && echo "enableImmutableInstalls: false" >> .yarnrc.yml
     - yarn
     - yarn build
     - coverage run --source=jupyter_ydoc --branch -m pytest -vv --asyncio-mode=auto --color=yes --tb=long

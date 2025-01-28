@@ -1,4 +1,4 @@
-{% set version = "3.0.3" %}
+{% set version = "2.1.5" %}
 {% set python_min = python_min | default("3.9") %}
 
 package:
@@ -8,10 +8,10 @@ package:
 source:
   - folder: dist
     url: https://pypi.org/packages/source/j/jupyter_ydoc/jupyter_ydoc-{{ version }}.tar.gz
-    sha256: 66f3d37a9a02a9711b508a5574b0ac489aa40f216030af29fdd82c862a2eb5ea
+    sha256: 0a66d437e266a3f74f2a2d290b8bf8737eba6b37c415e829779416fde3a2f532
   - folder: src
     url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v{{ version }}.tar.gz
-    sha256: 2509e19df2a34401e9aca6a25279dc3e88ac8dc9591a3369c7eb5aad61c49a7f
+    sha256: 062f1b4db9381799f81b8a5d9a770e112e8ab725230a6d89093394bf0e1c8844
 
 build:
   noarch: python

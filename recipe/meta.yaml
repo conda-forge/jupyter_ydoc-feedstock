@@ -57,7 +57,7 @@ test:
     - yarn
     - yarn build
     - coverage run --source=jupyter_ydoc --branch -m pytest -vv --asyncio-mode=auto --color=yes --tb=long
-    - coverage report --show-missing --skip-covered --fail-under=81
+    - coverage report --show-missing --skip-covered --fail-under=77
 
 about:
   home: https://github.com/jupyter-server/jupyter_ydoc

@@ -9,7 +9,7 @@ Package license: BSD-3-Clause
 
 Summary: Document structures for collaborative editing using Ypy
 
-Documentation: https://jupyter-ydoc.readthedocs.io
+Documentation: https://jupyter-ydoc.readthedocs.io/
 
 Current build status
 ====================

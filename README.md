@@ -29,7 +29,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter_ydoc-green.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-jupyter__ydoc-green.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/jupyter_ydoc.svg)](https://anaconda.org/conda-forge/jupyter_ydoc) |
 
 Installing jupyter_ydoc
 =======================

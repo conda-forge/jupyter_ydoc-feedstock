@@ -40,7 +40,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - 3.14.*
   - files:
       recipe:
         - run_test.py
@@ -55,7 +55,7 @@ tests:
         - httpx-ws >=0.5.2
         - hypercorn >=0.16.0
         - nodejs >=22,<23
-        - pycrdt-websocket >=0.15.0,<0.16.0
+        - pycrdt-websocket >=0.16.0,<0.17.0
         - pytest-asyncio
         - pytest-cov
         - python ${{ python_min }}.*

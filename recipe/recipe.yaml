@@ -30,7 +30,6 @@ requirements:
     - pip
     - python ${{ python_min }}.*
   run:
-    - importlib-metadata >=3.6
     - python >=${{ python_min }}
     - pycrdt >=0.10.1,<0.13.0
 
@@ -59,7 +58,6 @@ tests:
         - pytest-asyncio
         - pytest-cov
         - python ${{ python_min }}.*
-        - websockets >=10.0
         - yarn <4
     script:
       file: run_test.py

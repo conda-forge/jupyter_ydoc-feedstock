@@ -3,11 +3,13 @@ About jupyter_ydoc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyter_ydoc-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jupyter-server/jupyter_ydoc
+Home: https://pypi.org/project/jupyter-ydoc
 
 Package license: BSD-3-Clause
 
 Summary: Document structures for collaborative editing using Ypy
+
+Development: https://github.com/jupyter-server/jupyter_ydoc
 
 Documentation: https://jupyter-ydoc.readthedocs.io/
 

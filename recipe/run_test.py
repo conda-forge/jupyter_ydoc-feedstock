@@ -21,7 +21,7 @@ logFilters:
   - {level: discard, code: YN0019} # UNUSED_CACHE_ENTRY
 """
 COV_RUN = ["coverage", "run", "--source=jupyter_ydoc", "--branch", "-m"]
-PYTEST = ["pytest", "-vv", "--asyncio-mode=auto", "--color=yes", "--tb=long"]
+PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
 COV_REPORT = [
     "coverage",
     "report",

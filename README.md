@@ -150,3 +150,6 @@ Feedstock Maintainers
 * [@conda-forge/jupyter_server](https://github.com/orgs/conda-forge/teams/jupyter_server/)
 * [@davidbrochart](https://github.com/davidbrochart/)
 
+
+<!-- dummy commit to enable rerendering -->
+

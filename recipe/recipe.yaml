@@ -57,6 +57,7 @@ tests:
         - hypercorn >=0.16.0
         - nodejs >=22,<23
         - pycrdt-websocket >=0.16.0,<0.17.0
+        - pytest-timeout
         - pytest-cov
         - python ${{ python_min }}.*
         - yarn <4

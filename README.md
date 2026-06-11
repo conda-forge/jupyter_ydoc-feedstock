@@ -37,14 +37,14 @@ Current release info
 Installing jupyter_ydoc
 =======================
 
-Installing `jupyter_ydoc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `jupyter_ydoc` from the `conda-forge/label/jupyter_ydoc_beta` channel can be achieved by adding `conda-forge/label/jupyter_ydoc_beta` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels conda-forge/label/jupyter_ydoc_beta
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `jupyter_ydoc` can be installed with `conda`:
+Once the `conda-forge/label/jupyter_ydoc_beta` channel has been enabled, `jupyter_ydoc` can be installed with `conda`:
 
 ```
 conda install jupyter_ydoc
@@ -59,26 +59,26 @@ mamba install jupyter_ydoc
 It is possible to list all of the versions of `jupyter_ydoc` available on your platform with `conda`:
 
 ```
-conda search jupyter_ydoc --channel conda-forge
+conda search jupyter_ydoc --channel conda-forge/label/jupyter_ydoc_beta
 ```
 
 or with `mamba`:
 
 ```
-mamba search jupyter_ydoc --channel conda-forge
+mamba search jupyter_ydoc --channel conda-forge/label/jupyter_ydoc_beta
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search jupyter_ydoc --channel conda-forge
+mamba repoquery search jupyter_ydoc --channel conda-forge/label/jupyter_ydoc_beta
 
 # List packages depending on `jupyter_ydoc`:
-mamba repoquery whoneeds jupyter_ydoc --channel conda-forge
+mamba repoquery whoneeds jupyter_ydoc --channel conda-forge/label/jupyter_ydoc_beta
 
 # List dependencies of `jupyter_ydoc`:
-mamba repoquery depends jupyter_ydoc --channel conda-forge
+mamba repoquery depends jupyter_ydoc --channel conda-forge/label/jupyter_ydoc_beta
 ```
 
 

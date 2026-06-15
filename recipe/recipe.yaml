@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "3.5.0"
+  version: "4.0.0"
   python_check_max: "3.14"
 
 package:
@@ -10,11 +10,11 @@ package:
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/j/jupyter_ydoc/jupyter_ydoc-${{ version }}.tar.gz
-    sha256: 98a1918d7c2f333b62ad5ab88eaf1381a100dbe4c32ba80c263d3a02338af031
+  - url: https://pypi.org/packages/source/j/jupyter-ydoc/jupyter_ydoc-${{ version }}.tar.gz
+    sha256: 292763304364103cf796c85bd55fb6fa3fba08b9076e45b68c4d1ac266380fc5
     target_directory: dist
   - url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: e87f1edacf325d1ccb4756b009e240a341e37ffc4fea0fd1d1e721cc0dab327b
+    sha256: 74846930da4b6bf874df4fe1b7c02d6e24909dbac10f5bb7d65b2cf3768366db
     target_directory: src
 
 build:
@@ -32,7 +32,7 @@ requirements:
     - python ${{ python_min }}.*
   run:
     - anyio >=4.12.1,<5.0.0
-    - pycrdt >=0.13.0,<0.14.0
+    - pycrdt >=0.14.0,<0.15.0
     - python >=${{ python_min }}
 
 tests:
@@ -56,7 +56,7 @@ tests:
         - httpx-ws >=0.5.2
         - hypercorn >=0.16.0
         - nodejs >=22,<23
-        - pycrdt-websocket >=0.16.0,<0.17.0
+        - pycrdt-websocket >=0.16.3,<0.17.0
         - pytest-timeout
         - pytest-cov
         - python ${{ python_min }}.*

@@ -4,7 +4,8 @@ import sys
 from subprocess import call
 
 COV_FAIL_UNDER = 81
-HERE = Path(__file__).parent
+# Rattler-build runs a generated script outside the test files directory.
+HERE = Path.cwd()
 
 SRC = HERE / "src"
 YARN_RC = SRC / ".yarnrc.yml"

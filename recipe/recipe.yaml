@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "4.2.0"
+  version: "4.2.1"
   python_check_max: "3.14"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/j/jupyter-ydoc/jupyter_ydoc-${{ version }}.tar.gz
-    sha256: 50b79c8b846a36756badad060417d90ec5749b95566aed94311cc656917f0b5e
+    sha256: a4ae661e845e7d5acb99c4c8c650568483e9386123c23fe5deb538fa605664bd
     target_directory: dist
   - url: https://github.com/jupyter-server/jupyter_ydoc/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 0ce66b85fc36ec501950b14004eac768faae9f6fe31f5c8b55b96149b5c2f177
+    sha256: f20faa4751c1e7a10116907bb3d0775f06f11947915d10842bc6dbedf208613a
     target_directory: src
 
 build:
